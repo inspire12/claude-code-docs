@@ -1,3 +1,5 @@
+<img src="./banner.svg" alt="Claude Code Docs" width="100%"/>
+
 # Claude Code Docs (KO/EN)
 
 > 2026년 3월, Claude Code의 npm 소스맵을 통해 내부 TypeScript 소스코드가 유출되는 사건이 발생했습니다.  
@@ -9,21 +11,24 @@
 
 <table>
   <tr>
-    <th width="120">날짜</th>
-    <th>변경 사항</th>
-  </tr>
-  <tr>
-    <td align="center"><code>2026-04-02</code></td>
-    <td>
-      <b>📄 심층 분석 문서 추가</b><br>
-      <a href="./WIKIDOCS-소스코드분석.md">WIKIDOCS-소스코드분석.md</a> — wikidocs.net/338204 기반 소스코드 분석서 · 24개 섹션
+    <td valign="top" width="180">
+      <img src="https://img.shields.io/badge/2026--04--02-📄 분석서 추가-0A93C8?style=flat-square" alt="2026-04-02"/><br>
+      <sub><code>v1.1</code></sub>
+    </td>
+    <td valign="top">
+      <b><a href="./WIKIDOCS-소스코드분석.md">WIKIDOCS-소스코드분석.md</a></b> 추가<br>
+      <sub>wikidocs.net/338204 기반 소스코드 심층 분석서 · 쿼리 루프, 도구 시스템, 권한, 훅, UI 레이어 등 <b>24개 섹션</b></sub>
     </td>
   </tr>
+  <tr><td colspan="2"><hr/></td></tr>
   <tr>
-    <td align="center"><code>2026-04-01</code></td>
-    <td>
-      <b>🎉 초기 릴리즈</b><br>
-      Mintlify 원본 한국어 번역 21개 + 영어 원본 26개
+    <td valign="top" width="180">
+      <img src="https://img.shields.io/badge/2026--04--01-🎉 초기 릴리즈-1A7F5E?style=flat-square" alt="2026-04-01"/><br>
+      <sub><code>v1.0</code></sub>
+    </td>
+    <td valign="top">
+      <b>초기 문서 아카이브 생성</b><br>
+      <sub>Mintlify 원본 한국어 번역 <b>21개</b> + 영어 원본 <b>26개</b></sub>
     </td>
   </tr>
 </table>
