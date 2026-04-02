@@ -7,10 +7,26 @@
 
 ## 업데이트 기록
 
-| 날짜 | 내용 |
-|------|------|
-| 2026-04-01 | 초기 문서 추가 — Mintlify 원본 한국어 번역 (21개) 및 영어 원본 (26개) |
-| 2026-04-02 | [WIKIDOCS-소스코드분석.md](./WIKIDOCS-소스코드분석.md) 추가 — wikidocs.net/338204 기반 소스코드 심층 분석서 (24개 섹션) |
+<table>
+  <tr>
+    <th width="120">날짜</th>
+    <th>변경 사항</th>
+  </tr>
+  <tr>
+    <td align="center"><code>2026-04-02</code></td>
+    <td>
+      <b>📄 심층 분석 문서 추가</b><br>
+      <a href="./WIKIDOCS-소스코드분석.md">WIKIDOCS-소스코드분석.md</a> — wikidocs.net/338204 기반 소스코드 분석서 · 24개 섹션
+    </td>
+  </tr>
+  <tr>
+    <td align="center"><code>2026-04-01</code></td>
+    <td>
+      <b>🎉 초기 릴리즈</b><br>
+      Mintlify 원본 한국어 번역 21개 + 영어 원본 26개
+    </td>
+  </tr>
+</table>
 
 ---
 
