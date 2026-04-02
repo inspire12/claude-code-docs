@@ -43,6 +43,16 @@ en/            — 영어 원본 (26개)
 
 ---
 
+## 심층 분석 문서
+
+번역 문서 외에, Claude Code 소스코드를 직접 분석한 심층 기술 문서가 포함되어 있습니다.
+
+| 문서 | 출처 | 내용 |
+|------|------|------|
+| [WIKIDOCS-소스코드분석.md](./WIKIDOCS-소스코드분석.md) | [wikidocs.net/338204](https://wikidocs.net/338204) | ~1,884개 TypeScript 파일 분석 — 쿼리 루프, 도구 시스템, 권한, 훅, UI 레이어 등 24개 섹션 |
+
+---
+
 ## 출처
 
 - 원본 문서: https://vineetagarwal-code-claude-code.mintlify.app
