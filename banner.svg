@@ -1,122 +1,115 @@
-<svg width="860" height="200" viewBox="0 0 860 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="860" height="210" viewBox="0 0 860 210" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       @keyframes scan {
-        0%   { transform: translateY(0px);   opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { transform: translateY(200px); opacity: 0; }
+        0%   { transform: translateY(0px);  opacity: 0; }
+        8%   { opacity: 1; }
+        92%  { opacity: 1; }
+        100% { transform: translateY(210px); opacity: 0; }
       }
       @keyframes pulse {
-        0%, 100% { opacity: 0.55; }
+        0%, 100% { opacity: 0.6; }
         50%       { opacity: 1; }
       }
       @keyframes blink {
-        0%, 49% { opacity: 1; }
+        0%, 49%  { opacity: 1; }
         50%, 100% { opacity: 0; }
       }
-      .scanline   { animation: scan 5s linear infinite; }
-      .pulse-blue { animation: pulse 3s ease-in-out infinite; }
-      .blink      { animation: blink 1.1s step-end infinite; }
+      .scanline { animation: scan 6s linear infinite; }
+      .glow-pulse { animation: pulse 3.5s ease-in-out infinite; }
+      .cursor    { animation: blink 1.1s step-end infinite; }
     </style>
 
-    <linearGradient id="bg" x1="0" y1="0" x2="860" y2="200" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="860" y2="210" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#060b14"/>
-      <stop offset="100%" stop-color="#0c1628"/>
+      <stop offset="100%" stop-color="#0b1525"/>
     </linearGradient>
 
-    <!-- subtle radial highlight in center -->
-    <radialGradient id="center-glow" cx="50%" cy="50%" r="45%">
-      <stop offset="0%"   stop-color="#00b4d8" stop-opacity="0.06"/>
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#00b4d8" stop-opacity="0.07"/>
       <stop offset="100%" stop-color="#00b4d8" stop-opacity="0"/>
     </radialGradient>
 
-    <filter id="glow-cyan" x="-20%" y="-60%" width="140%" height="220%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="f-white" x="-8%" y="-40%" width="116%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <filter id="glow-white" x="-5%" y="-30%" width="110%" height="160%">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="f-cyan" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0L0 0 0 40" fill="none" stroke="#00b4d8" stroke-width="0.3" stroke-opacity="0.08"/>
+      <path d="M40 0L0 0 0 40" fill="none" stroke="#00b4d8" stroke-width="0.3" stroke-opacity="0.07"/>
     </pattern>
 
     <clipPath id="clip">
-      <rect width="860" height="200"/>
+      <rect width="860" height="210"/>
     </clipPath>
   </defs>
 
   <g clip-path="url(#clip)">
-    <!-- BG layers -->
-    <rect width="860" height="200" fill="url(#bg)"/>
-    <rect width="860" height="200" fill="url(#grid)"/>
-    <rect width="860" height="200" fill="url(#center-glow)"/>
+    <!-- Background -->
+    <rect width="860" height="210" fill="url(#bg)"/>
+    <rect width="860" height="210" fill="url(#grid)"/>
+    <rect width="860" height="210" fill="url(#center-glow)"/>
 
     <!-- Scan line sweep -->
-    <rect class="scanline" x="0" y="0" width="860" height="2" fill="rgba(0,180,216,0.09)"/>
+    <rect class="scanline" x="0" y="0" width="860" height="2" fill="rgba(0,180,216,0.08)"/>
 
     <!-- Left accent bar -->
-    <rect x="0" y="0" width="3" height="200" fill="#00b4d8" opacity="0.7"/>
+    <rect x="0" y="0" width="3" height="210" fill="#00b4d8" opacity="0.75"/>
 
-    <!-- Right accent bar -->
-    <rect x="857" y="0" width="3" height="200" fill="#00b4d8" opacity="0.2"/>
-
-    <!-- Top horizontal rule -->
-    <line x1="20" y1="22" x2="840" y2="22" stroke="#00b4d8" stroke-width="0.5" stroke-opacity="0.2"/>
-
-    <!-- Bottom horizontal rule -->
-    <line x1="20" y1="178" x2="840" y2="178" stroke="#00b4d8" stroke-width="0.5" stroke-opacity="0.2"/>
+    <!-- Top rule -->
+    <line x1="18" y1="24" x2="842" y2="24" stroke="#00b4d8" stroke-width="0.5" stroke-opacity="0.18"/>
+    <!-- Bottom rule -->
+    <line x1="18" y1="186" x2="842" y2="186" stroke="#00b4d8" stroke-width="0.5" stroke-opacity="0.18"/>
 
     <!-- Corner brackets — top-left -->
-    <path d="M 18 38 L 18 18 L 38 18" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 16 42 L 16 20 L 40 20" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.6"/>
     <!-- Corner brackets — top-right -->
-    <path d="M 822 18 L 842 18 L 842 38" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 820 20 L 844 20 L 844 42" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.6"/>
     <!-- Corner brackets — bottom-left -->
-    <path d="M 18 162 L 18 182 L 38 182" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 16 168 L 16 190 L 40 190" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.6"/>
     <!-- Corner brackets — bottom-right -->
-    <path d="M 822 182 L 842 182 L 842 162" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 820 190 L 844 190 L 844 168" stroke="#00b4d8" stroke-width="1.5" fill="none" opacity="0.6"/>
 
-    <!-- Top-left label -->
-    <text x="48" y="16" font-family="'Courier New',Courier,monospace" font-size="8" fill="#00b4d8" opacity="0.45" letter-spacing="3.5">ANTHROPIC · INTERNAL · LEAKED</text>
+    <!-- ── MAIN TITLE: CLAUDE CODE ── -->
+    <!-- depth shadow -->
+    <text x="433" y="103" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="62" font-weight="bold"
+          fill="#00b4d8" opacity="0.05">CLAUDE CODE</text>
+    <!-- main white text -->
+    <text x="430" y="100" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="62" font-weight="bold"
+          fill="#dde8f4" filter="url(#f-white)">CLAUDE CODE</text>
 
-    <!-- Top-right label: classification -->
-    <text x="814" y="16" text-anchor="end" font-family="'Courier New',Courier,monospace" font-size="8" fill="#ff6b6b" opacity="0.6" letter-spacing="3">CONFIDENTIAL</text>
+    <!-- thin divider between the two title lines -->
+    <line x1="200" y1="112" x2="660" y2="112" stroke="#00b4d8" stroke-width="0.5" stroke-opacity="0.35"/>
 
-    <!-- Left-side ghost lines (decorative code lines) -->
-    <text x="48" y="82"  font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">$ git clone leaked/claude-code</text>
-    <text x="48" y="97"  font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">Receiving objects: 1884 files</text>
-    <text x="48" y="112" font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">Resolving deltas: 512,000 lines</text>
-    <text x="48" y="127" font-family="'Courier New',Courier,monospace" font-size="9" fill="#3fb950" opacity="0.25">✓ done.</text>
+    <!-- ── MAIN TITLE: DOCS ── -->
+    <text class="glow-pulse" x="430" y="157" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="62" font-weight="bold"
+          fill="#00b4d8" filter="url(#f-cyan)" letter-spacing="22">DOCS</text>
 
-    <!-- Right-side stats -->
-    <text x="814" y="82"  text-anchor="end" font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">TypeScript ████████ 94%</text>
-    <text x="814" y="97"  text-anchor="end" font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">1,884  files</text>
-    <text x="814" y="112" text-anchor="end" font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">512,000  lines</text>
-    <text x="814" y="127" text-anchor="end" font-family="'Courier New',Courier,monospace" font-size="9" fill="#00b4d8" opacity="0.18">2026-03-31  leaked</text>
+    <!-- blinking cursor after DOCS -->
+    <rect class="cursor" x="635" y="119" width="10" height="42" fill="#00b4d8" opacity="0.65"/>
 
-    <!-- Shadow text (depth effect) -->
-    <text x="432" y="112" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="74" font-weight="bold" fill="#00b4d8" opacity="0.04">CLAUDE CODE</text>
+    <!-- ── SUBTITLE ── -->
+    <text x="430" y="176" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="10"
+          fill="#7d8590" opacity="0.55" letter-spacing="3">Claude Code 공식 문서 아카이브  ·  KO / EN</text>
 
-    <!-- Main title -->
-    <text x="430" y="110" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="74" font-weight="bold" fill="#dde6f0" filter="url(#glow-white)">CLAUDE CODE</text>
+    <!-- bottom-right doc count -->
+    <text x="836" y="200"
+          text-anchor="end"
+          font-family="'Courier New',Courier,monospace" font-size="8"
+          fill="#00b4d8" opacity="0.3" letter-spacing="1.5">47 DOCUMENTS</text>
 
-    <!-- Divider line under title -->
-    <line x1="280" y1="122" x2="580" y2="122" stroke="#00b4d8" stroke-width="0.6" stroke-opacity="0.4"/>
-
-    <!-- "DOCS · KO/EN" -->
-    <text class="pulse-blue" x="430" y="148" text-anchor="middle" font-family="'Courier New',Courier,monospace" font-size="18" font-weight="bold" fill="#00b4d8" filter="url(#glow-cyan)" letter-spacing="14">DOCS · KO/EN</text>
-
-    <!-- Cursor blink after DOCS line -->
-    <rect class="blink" x="618" y="133" width="9" height="17" fill="#00b4d8" opacity="0.7"/>
-
-    <!-- Bottom-left label -->
-    <text x="48" y="192" font-family="'Courier New',Courier,monospace" font-size="8" fill="#7d8590" opacity="0.45">Source Code Analysis Archive · 2026</text>
-
-    <!-- Bottom-right label -->
-    <text x="814" y="192" text-anchor="end" font-family="'Courier New',Courier,monospace" font-size="8" fill="#7d8590" opacity="0.45">npm sourcemap leak · 2026-03-31</text>
+    <!-- bottom-left version -->
+    <text x="24" y="200"
+          font-family="'Courier New',Courier,monospace" font-size="8"
+          fill="#00b4d8" opacity="0.3" letter-spacing="1.5">2026</text>
   </g>
 </svg>
