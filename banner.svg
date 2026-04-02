@@ -1,0 +1,139 @@
+<svg width="860" height="210" viewBox="0 0 860 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes scan {
+        0%    { transform: translateY(0px);   opacity: 0; }
+        8%    { opacity: 1; }
+        92%   { opacity: 1; }
+        100%  { transform: translateY(210px); opacity: 0; }
+      }
+      @keyframes ember-pulse {
+        0%, 100% { opacity: 0.55; }
+        40%       { opacity: 0.95; }
+        70%       { opacity: 0.75; }
+      }
+      @keyframes blink {
+        0%, 49%   { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes heat-drift {
+        0%, 100% { opacity: 0.06; }
+        50%      { opacity: 0.12; }
+      }
+      .scanline    { animation: scan 7s linear infinite; }
+      .ember-glow  { animation: ember-pulse 4s ease-in-out infinite; }
+      .cursor      { animation: blink 1.1s step-end infinite; }
+      .heat        { animation: heat-drift 5s ease-in-out infinite; }
+    </style>
+
+    <!-- Deep warm-dark background -->
+    <linearGradient id="bg" x1="0" y1="210" x2="860" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#0e0805"/>
+      <stop offset="55%"  stop-color="#130b06"/>
+      <stop offset="100%" stop-color="#1a1009"/>
+    </linearGradient>
+
+    <!-- Ember radial: center warmth -->
+    <radialGradient id="ember-center" cx="50%" cy="58%" r="48%">
+      <stop offset="0%"   stop-color="#d97757" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#d97757" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Secondary warm glow: bottom warmth -->
+    <radialGradient id="heat-bottom" cx="50%" cy="100%" r="55%">
+      <stop offset="0%"   stop-color="#b85030" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#b85030" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow for DOCS text -->
+    <filter id="f-ember" x="-22%" y="-65%" width="144%" height="230%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Soft glow for CLAUDE CODE -->
+    <filter id="f-warm-white" x="-6%" y="-35%" width="112%" height="170%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Warm grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0L0 0 0 40" fill="none" stroke="#d97757" stroke-width="0.3" stroke-opacity="0.07"/>
+    </pattern>
+
+    <!-- Ember divider gradient -->
+    <linearGradient id="divider-grad" x1="200" y1="0" x2="660" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#d97757" stop-opacity="0"/>
+      <stop offset="25%"  stop-color="#d97757" stop-opacity="0.5"/>
+      <stop offset="50%"  stop-color="#e8905f" stop-opacity="0.7"/>
+      <stop offset="75%"  stop-color="#d97757" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d97757" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="clip">
+      <rect width="860" height="210"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <!-- Background -->
+    <rect width="860" height="210" fill="url(#bg)"/>
+    <rect width="860" height="210" fill="url(#grid)"/>
+    <rect class="heat" width="860" height="210" fill="url(#ember-center)"/>
+    <rect width="860" height="210" fill="url(#heat-bottom)"/>
+
+    <!-- Scan line in warm amber -->
+    <rect class="scanline" x="0" y="0" width="860" height="1.5" fill="rgba(217,119,87,0.1)"/>
+
+    <!-- Left accent bar — terracotta -->
+    <rect x="0" y="0" width="3" height="210" fill="#d97757" opacity="0.8"/>
+
+    <!-- Subtle right bar -->
+    <rect x="857" y="0" width="3" height="210" fill="#d97757" opacity="0.15"/>
+
+    <!-- Horizontal rules -->
+    <line x1="18" y1="24" x2="842" y2="24" stroke="#d97757" stroke-width="0.5" stroke-opacity="0.2"/>
+    <line x1="18" y1="186" x2="842" y2="186" stroke="#d97757" stroke-width="0.5" stroke-opacity="0.2"/>
+
+    <!-- Corner brackets — terracotta -->
+    <path d="M 16 42 L 16 20 L 40 20" stroke="#d97757" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 820 20 L 844 20 L 844 42" stroke="#d97757" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 16 168 L 16 190 L 40 190" stroke="#d97757" stroke-width="1.5" fill="none" opacity="0.65"/>
+    <path d="M 820 190 L 844 190 L 844 168" stroke="#d97757" stroke-width="1.5" fill="none" opacity="0.65"/>
+
+    <!-- ── MAIN TITLE: CLAUDE CODE ── -->
+    <!-- depth shadow -->
+    <text x="433" y="103" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="62" font-weight="bold"
+          fill="#d97757" opacity="0.06">CLAUDE CODE</text>
+    <!-- main text -->
+    <text x="430" y="100" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="62" font-weight="bold"
+          fill="#f2e4d8" filter="url(#f-warm-white)">CLAUDE CODE</text>
+
+    <!-- Ember divider line -->
+    <line x1="200" y1="113" x2="660" y2="113" stroke="url(#divider-grad)" stroke-width="0.8"/>
+
+    <!-- ── MAIN TITLE: DOCS ── -->
+    <text class="ember-glow" x="430" y="158" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="62" font-weight="bold"
+          fill="#d97757" filter="url(#f-ember)" letter-spacing="22">DOCS</text>
+
+    <!-- Blinking cursor — terracotta -->
+    <rect class="cursor" x="635" y="120" width="10" height="42" fill="#d97757" opacity="0.7"/>
+
+    <!-- ── SUBTITLE ── -->
+    <text x="430" y="176" text-anchor="middle"
+          font-family="'Courier New',Courier,monospace" font-size="10"
+          fill="#8a6e5e" opacity="0.7" letter-spacing="3">CENTRAL DOCS HUB  ·  KO / EN</text>
+
+    <!-- bottom corners: doc count / year -->
+    <text x="24" y="200"
+          font-family="'Courier New',Courier,monospace" font-size="8"
+          fill="#d97757" opacity="0.28" letter-spacing="1.5">2026</text>
+    <text x="836" y="200" text-anchor="end"
+          font-family="'Courier New',Courier,monospace" font-size="8"
+          fill="#d97757" opacity="0.28" letter-spacing="1.5">47 DOCUMENTS</text>
+  </g>
+</svg>

@@ -1,7 +1,36 @@
+<img src="./banner.svg" alt="Claude Code Docs" width="100%"/>
+
 # Claude Code Docs (KO/EN)
 
-> 2026년 3월, Claude Code의 npm 소스맵을 통해 내부 TypeScript 소스코드가 유출되는 사건이 발생했습니다.  
-> 이 레포는 그 과정에서 공개된 내부 구조 분석 문서를 한국어로 번역·정리한 아카이브입니다.
+> Claude Code 문서 중앙 허브 — 유용한 문서들을 한국어·영어로 정리합니다.
+
+---
+
+## 업데이트 기록
+
+<table>
+  <tr>
+    <td valign="top" width="180">
+      <img src="https://img.shields.io/badge/2026--04--02-📄 분석서 추가-0A93C8?style=flat-square" alt="2026-04-02"/><br>
+      <sub><code>v1.1</code></sub>
+    </td>
+    <td valign="top">
+      <b><a href="./WIKIDOCS-소스코드분석.md">WIKIDOCS-소스코드분석.md</a></b> 추가<br>
+      <sub>wikidocs.net/338204 기반 소스코드 심층 분석서 · 쿼리 루프, 도구 시스템, 권한, 훅, UI 레이어 등 <b>24개 섹션</b></sub>
+    </td>
+  </tr>
+  <tr><td colspan="2"><hr/></td></tr>
+  <tr>
+    <td valign="top" width="180">
+      <img src="https://img.shields.io/badge/2026--04--01-🎉 초기 릴리즈-1A7F5E?style=flat-square" alt="2026-04-01"/><br>
+      <sub><code>v1.0</code></sub>
+    </td>
+    <td valign="top">
+      <b>초기 문서 아카이브 생성</b><br>
+      <sub>Mintlify 원본 한국어 번역 <b>21개</b> + 영어 원본 <b>26개</b></sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -40,6 +69,16 @@ en/            — 영어 원본 (26개)
     sdk/
     tools/
 ```
+
+---
+
+## 심층 분석 문서
+
+번역 문서 외에, Claude Code 소스코드를 직접 분석한 심층 기술 문서가 포함되어 있습니다.
+
+| 문서 | 출처 | 내용 |
+|------|------|------|
+| [WIKIDOCS-소스코드분석.md](./WIKIDOCS-소스코드분석.md) | [wikidocs.net/338204](https://wikidocs.net/338204) | ~1,884개 TypeScript 파일 분석 — 쿼리 루프, 도구 시스템, 권한, 훅, UI 레이어 등 24개 섹션 |
 
 ---
 
