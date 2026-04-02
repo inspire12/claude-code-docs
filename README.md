@@ -2,7 +2,7 @@
 
 # Claude Code Docs (KO/EN)
 
-> Claude Code에 관한 유용한 문서들을 한국어·영어로 정리하는 아카이브입니다.
+> Claude Code 문서 중앙 허브 — 유용한 문서들을 한국어·영어로 정리합니다.
 
 ---
 

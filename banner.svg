@@ -99,7 +99,7 @@
     <!-- ── SUBTITLE ── -->
     <text x="430" y="176" text-anchor="middle"
           font-family="'Courier New',Courier,monospace" font-size="10"
-          fill="#7d8590" opacity="0.55" letter-spacing="3">Claude Code 공식 문서 아카이브  ·  KO / EN</text>
+          fill="#7d8590" opacity="0.55" letter-spacing="3">CENTRAL DOCS HUB  ·  KO / EN</text>
 
     <!-- bottom-right doc count -->
     <text x="836" y="200"
