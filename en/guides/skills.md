@@ -242,4 +242,10 @@ Invoke with:
 ```
 
 
+## Best practices
+
+For detailed guidance on writing effective Skills — including structure, naming, progressive disclosure, workflows, evaluation, and common patterns — see [Skill authoring best practices](skills-best-practices.md).
+
+---
+
 Built with [Mintlify](https://mintlify.com).
